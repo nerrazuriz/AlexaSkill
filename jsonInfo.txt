@@ -1,0 +1,13 @@
+    [
+      1, -> Id
+      424, -> Código
+      "Fullcarga", -> Entidad
+      "EL RINCON DEL GUSTO", -> Nombre Fantasia
+      "CERRO BLANCO 625", -> Direccion
+      "MAIPU", -> Comuna
+      "", -> Horario Preferencial
+      334307, -> Este
+      6288070, -> Norte
+      -70.7849931653655, -> Longitud
+      -33.5344277734798 -> Latitud
+    ],
