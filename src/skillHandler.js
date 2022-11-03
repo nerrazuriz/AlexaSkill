@@ -20,7 +20,6 @@ const createSkill = () => {
       SessionEndedRequest
     )
     .withApiClient(new Alexa.DefaultApiClient())
-    .withCustomUserAgent("puntosbip/v1")
     .create();
 };
 

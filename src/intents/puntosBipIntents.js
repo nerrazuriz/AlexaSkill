@@ -1,13 +1,16 @@
 const PuntosBipIntentHandler = {
   canHandle(handlerInput) {
     return (
-      Alexa.getRequestType(handlerInput.requestEnvelope.request.type) ===
-        "IntentRequest" &&
-      Alexa.getIntentName(handlerInput.requestEnvelope) === "PuntosBip"
+      handlerInput.requestEnvelope.request.type === "IntentRequest" &&
+      handlerInput.requestEnvelope.request.intent.name === "PuntosBip"
     );
   },
   handle(handlerInput) {
-    const speechText = "Hola, bienvenido a prueba uno.";
+    const speechText = "Puntos Bip cercanos";
+      console.log(handlerInput.requestEnvelope.request.intent.slots);
+    const street = Alexa.getSlotValue(handlerInput.requestEnvelope, "street");
+    const number = Alexa.getSlotValue(handlerInput.requestEnvelope, "number");
+    console.log("HANDLE", street, number);
 
     return handlerInput.responseBuilder
       .speak(speechText)
