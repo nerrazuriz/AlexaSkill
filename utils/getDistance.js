@@ -1,4 +1,4 @@
-function distance(lat1, lon1, lat2, lon2) {
+const getDistance = (lat1, lon1, lat2, lon2) => {
   lon1 = (lon1 * Math.PI) / 180;
   lon2 = (lon2 * Math.PI) / 180;
   lat1 = (lat1 * Math.PI) / 180;
@@ -12,10 +12,11 @@ function distance(lat1, lon1, lat2, lon2) {
     Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2), 2);
 
   let c = 2 * Math.asin(Math.sqrt(a));
-  :Wa
 
   // Radio de la tierra en kilometros
   let radio = 6371;
 
   return c * radio;
-}
+};
+
+module.exports = { getDistance };
