@@ -1,8 +1,9 @@
+const fs = require("fs");
 const locations = JSON.parse(fs.readFileSync("puntos_bip.json", "utf8"));
 const { getDistance } = require("./getDistance");
 
 const getNearestLocation = (lat, lng) => {
-  let nearest = null;
+  let nearest = {};
   let minDistance = getDistance(
     lat,
     lng,
@@ -18,7 +19,8 @@ const getNearestLocation = (lat, lng) => {
     );
     if (nowDistance < minDistance) {
       minDistance = nowDistance;
-      nearest = locations.records[i][4];
+      nearest.name = locations.records[i][3];
+      nearest.address = locations.records[i][4];
     }
   }
   return nearest;
