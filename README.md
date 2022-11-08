@@ -16,7 +16,7 @@ pnpm install
 pnpm start
 ```
 
-4. Desde la consola de Alexa, _carga bip_ gatilla el intent de launch e inicia el skill. Luego para solicitar que encuentre puntos de carga bip, es posible utilizar cualquiera de las siguientes opciones:
+4. Desde la consola de Alexa, _puntos de carga_ gatilla el intent de launch e inicia el skill. Luego para solicitar que encuentre puntos de carga bip, es posible utilizar cualquiera de las siguientes opciones:
 
 - Alexa lugares de carga
 - Alexa lugares de carga bip
