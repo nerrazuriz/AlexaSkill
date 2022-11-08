@@ -3,7 +3,8 @@ const LaunchRequest = {
     return handlerInput.requestEnvelope.request.type === "LaunchRequest";
   },
   handle(handlerInput) {
-    const speechText = "Hola, puedes solicitar puntos de carga bip aquí.";
+    const speechText =
+      "Hola, para solicitar puntos de carga puedes decir: encuentra puntos de carga";
 
     return handlerInput.responseBuilder
       .speak(speechText)
