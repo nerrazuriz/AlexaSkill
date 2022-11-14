@@ -1,9 +1,9 @@
 const Alexa = require("ask-sdk-core");
 const {
-  UnhandledIntent,
-  HelpIntent,
-  CancelAndStopIntentHandler,
   SessionEndedRequest,
+  HelpIntentHandler,
+  CancelAndStopIntentHandler,
+  ErrorHandler,
 } = require("./intents/amazonIntents");
 const { PuntosBipIntentHandler } = require("./intents/puntosBipIntents");
 const { LaunchRequest } = require("./intents/launchIntents");

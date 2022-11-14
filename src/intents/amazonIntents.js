@@ -1,3 +1,5 @@
+const Alexa = require("ask-sdk-core");
+
 const SessionEndedRequest = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === "SessionEndedRequest";
@@ -11,7 +13,7 @@ const SessionEndedRequest = {
   },
 };
 
-const HelpIntent = {
+const HelpIntentHandler = {
   canHandle(handlerInput) {
     const { request } = handlerInput.requestEnvelope;
 
@@ -21,7 +23,7 @@ const HelpIntent = {
     );
   },
   handle(handlerInput) {
-    const speechText = "Puedes decir: hola mundo.";
+    const speechText = "Puedes preguntar por el punto de carga mas cercano";
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -45,13 +47,13 @@ const CancelAndStopIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard("Hello World", speechText)
+      .withSimpleCard(speechText, speechText)
       .withShouldEndSession(true)
       .getResponse();
   },
 };
 
-const UnhandledIntent = {
+const ErrorHandler = {
   canHandle() {
     return true;
   },
@@ -68,7 +70,7 @@ const UnhandledIntent = {
 
 module.exports = {
   SessionEndedRequest,
-  HelpIntent,
+  HelpIntentHandler,
   CancelAndStopIntentHandler,
-  UnhandledIntent,
+  ErrorHandler,
 };
