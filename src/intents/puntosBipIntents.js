@@ -14,8 +14,6 @@ const PuntosBipIntentHandler = {
       handlerInput.requestEnvelope.request.intent.slots.street;
     const { value: number } =
       handlerInput.requestEnvelope.request.intent.slots.number;
-    console.log(street, number);
-    console.log(handlerInput.requestEnvelope.request.intent);
     if (street && number) {
       const address = `${street} ${number}, Santiago`;
       try {
@@ -26,9 +24,7 @@ const PuntosBipIntentHandler = {
         if (data.results.length > 0) {
           const place = data.results[0];
           const { lat, lng } = place.geometry;
-          console.log("PLACE", place);
           const nearest = getNearestLocation(lat, lng);
-          console.log("nearest", nearest);
           speechText = `El punto BIP más cercano a ${address} es ${nearest.name}, ubicado en ${nearest.address}.`;
         } else {
           speechText = "No se encontró la dirección ingresada.";
